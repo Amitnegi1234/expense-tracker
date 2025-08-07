@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cricket Careers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="form-container">
+      <h2>Player Information</h2>
+      <form id="playerForm">
+        <label>Name:</label>
+        <input type="text" name="name" required />
+        <label>Email:</label>
+        <input type="email" name="email" required />
+        <div id="emailError" class="error-message"></div>
+        <label>Password:</label>
+        <input type="password" name="password" required />
+
+        <button type="submit">sign up</button>
+        <button class="link"><a href="login.html">Login page</a></button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js">
+  </script>
+</body>
+</html>

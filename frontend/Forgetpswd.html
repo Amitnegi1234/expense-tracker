@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forgot Password</title>
+  <link rel="stylesheet" href="Forgetpswd.css">
+</head>
+<body>
+  <h2>Forgot Password</h2>
+  <form id="forgetForm">
+    <input type="email" name="email" placeholder="Enter email" required />
+    <button type="submit">Send Reset Link</button>
+    <button id="log"><a href="login.html">Login</a></button>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    document.getElementById('forgetForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = e.target.email.value;
+
+      try {
+        const res = await axios.post('http://localhost:3000/user/forgetPassword', { email });
+        if (res.status === 202) {
+          document.body.innerHTML += '<div style="color:green;">Mail Successfully Sent</div>';
+        }
+      } catch (err) {
+        document.body.innerHTML += `<div style="color:red;">${err.message}</div>`;
+      }
+    });
+  </script>
+</body>
+</html>
