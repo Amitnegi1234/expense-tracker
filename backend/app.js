@@ -3,11 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import router from "./routes/user.js";
 import { db } from "./utils/db.js";
-// import path from "path"
-// import { fileURLToPath } from "url";
+import path from "path"
+import { fileURLToPath } from "url";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import route from "./routes/payment.js";
 import helmet from "helmet";
 import compression from "compression";
@@ -15,7 +15,7 @@ import './models/index.js'
 dotenv.config({quiet:true});
 const app =express();
 app.use(cors());
-// app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static(path.join(__dirname, "../frontend")));
 
 // app.use(helmet())  //set special headers
 app.use(compression())  // reduce the asset size
