@@ -9,7 +9,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 import route from "./routes/payment.js";
-import helmet from "helmet";
 import compression from "compression";
 import './models/index.js'
 dotenv.config({quiet:true});
@@ -23,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 app.use(router);
 app.use(route);
-const port=3000;
+const port=process.env.PORT || 3000;
 
 db.sync().then(() => {
   try {

@@ -1,14 +1,14 @@
 import sgMail from '@sendgrid/mail';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Load .env file
+dotenv.config(); 
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export const sendEmail = async (to, subject, html) => {
   const msg = {
     to,
-    from: 'amitnegi6341@gmail.com', // Replace with your verified sender
+    from: 'amitnegi6341@gmail.com', 
     subject,
     html,
   };

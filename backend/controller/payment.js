@@ -23,9 +23,9 @@ export const createPaymentSession = async (req, res) => {
     order_amount: 1.0,
     order_currency: "INR",
     customer_details: {
-      customer_id: req.user.id.toString(), // ✅ dynamic user id
+      customer_id: req.user.id.toString(), //  dynamic user id
       customer_phone: "9876543210",
-      customer_email: req.user.email,      // ✅ dynamic user email
+      customer_email: req.user.email,      //  dynamic user email
     },
     order_meta: {
       return_url: `http://127.0.0.1:5500/signup/frontend/expense.html?order_id=${orderId}`
